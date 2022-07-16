@@ -1,6 +1,7 @@
 package singleton
 
 import (
+	"fmt"
 	"sync"
 )
 
@@ -19,6 +20,7 @@ type singleton struct {
 
 func NewInstance() Singleton {
 	once.Do(func() {
+		fmt.Println("Init Intance")
 		instance = &singleton{count: 1}
 	})
 	return instance
