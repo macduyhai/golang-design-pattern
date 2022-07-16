@@ -1,5 +1,7 @@
 package singleton
 
+// Chỉ duy nhất một đối tượng của một type bất kì được khởi tạo trong suốt quá trình hoạt động của
+// một chương trình
 import (
 	"fmt"
 	"sync"
