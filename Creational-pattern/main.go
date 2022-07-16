@@ -5,14 +5,23 @@ import (
 	"log"
 
 	"github.com/macduyhai/golang-design-pattern/Creational-pattern/builder"
+	"github.com/macduyhai/golang-design-pattern/Creational-pattern/factorymethod"
 	"github.com/macduyhai/golang-design-pattern/Creational-pattern/singleton"
 )
 
 func main() {
 	// TestSingleTon()
-	TestBuilder()
+	// TestBuilder()
+	TestFactoryMethod()
 }
+func TestFactoryMethod() {
+	log.Println("Test factorymethod pattern")
+	payment := factorymethod.GetPaymentMethod(factorymethod.DebitCard)
+	log.Println(payment.Pay(23.5))
+	payment = factorymethod.GetPaymentMethod(factorymethod.Cash)
+	log.Println(payment.Pay(11))
 
+}
 func TestBuilder() {
 	log.Println("Test builder pattern")
 	account := builder.NewBankAccountBuilder().
